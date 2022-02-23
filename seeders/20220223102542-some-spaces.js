@@ -12,14 +12,7 @@ module.exports = {
           color: "#1936C6",
           createdAt: new Date(),
           updatedAt: new Date(),
-        },
-        {
-          title: "Milton space",
-          description: "This is Milton space",
-          backgroundColor: "#50C619",
-          color: "#C61919",
-          createdAt: new Date(),
-          updatedAt: new Date(),
+          userId: 1,
         },
         {
           title: "Andrea space",
@@ -28,6 +21,7 @@ module.exports = {
           color: "#C6197F",
           createdAt: new Date(),
           updatedAt: new Date(),
+          userId: 2,
         },
       ],
       {}

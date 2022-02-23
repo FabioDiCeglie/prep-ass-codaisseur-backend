@@ -19,10 +19,12 @@ module.exports = {
       backgroundColor: {
         type: Sequelize.STRING,
         allowNull: true,
+        defaultValue: "#ffffff",
       },
       color: {
         type: Sequelize.STRING,
         allowNull: true,
+        defaultValue: "#000000",
       },
       createdAt: {
         allowNull: false,
