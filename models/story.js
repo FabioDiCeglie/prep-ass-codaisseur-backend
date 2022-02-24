@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "idstory",
         as: "storyLikes",
       });
+      story.hasMany(models.comment, { foreignKey: "storyId" });
     }
   }
   story.init(
@@ -22,7 +23,6 @@ module.exports = (sequelize, DataTypes) => {
       name: { type: DataTypes.STRING, allowNull: false },
       content: { type: DataTypes.TEXT, allowNull: true },
       imageUrl: { type: DataTypes.STRING, allowNull: true },
-      comment: { type: DataTypes.STRING, allowNull: false },
     },
     {
       sequelize,

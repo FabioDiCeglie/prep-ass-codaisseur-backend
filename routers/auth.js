@@ -104,4 +104,24 @@ router.get("/me", authMiddleware, async (req, res) => {
   }
 });
 
+router.post("/create/comment/:id", authMiddleware, async (req, res) => {
+  try {
+    const storyId = req.params.id;
+    const { comment } = req.body;
+
+    const getStoryById = await Story.findByPk(storyId);
+    if (!getStoryById) {
+      res.status(400).send("Id not found!");
+    } else {
+      const createNewComment = await getStoryById.post({
+        comment,
+      });
+      res.status(200).send(createNewComment);
+    }
+  } catch (error) {
+    console.log(error.message);
+    return res.status(400).send("The id is not correct!");
+  }
+});
+
 module.exports = router;
