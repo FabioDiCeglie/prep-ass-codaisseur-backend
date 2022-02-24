@@ -10,6 +10,10 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       story.belongsTo(models.space, { foreignKey: "spaceId" });
+      story.belongsToMany(models.user, {
+        through: "likes",
+        foreignKey: "idstory",
+      });
     }
   }
   story.init(

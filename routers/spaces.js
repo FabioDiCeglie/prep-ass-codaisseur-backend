@@ -11,6 +11,7 @@ router.get("/spaces", async (req, res) => {
 
     res.status(201).json(getAllSpaces);
   } catch (error) {
+    console.log(error);
     return res.status(400).send("Something went wrong, sorry");
   }
 });
