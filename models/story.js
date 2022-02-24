@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       story.belongsToMany(models.user, {
         through: "likes",
         foreignKey: "idstory",
+        as: "storyLikes",
       });
     }
   }
